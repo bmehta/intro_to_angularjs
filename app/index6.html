@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="MyRecipeController6">
+		<h1>Demo 6: Forms</h1>
+		<h2>{{caption}}</h2>
+		<div>
+			List of Recipes:
+			 <ul>
+	    		<li ng-repeat="name in recipeNames">
+	      			{{name}}
+	    		</li>
+  			</ul>
+  			<form name="myForm">
+  				Your fav. recipe<input type="text" name="myFavRecipe" ng-model="favRecipe" required/><span class="error" ng-show="myForm.myFavRecipe.$error.required">Required!</span><br/><br/>
+  				Your phone no.<input type="text" name="myPhoneNumber" ng-model="phoneNumber" ng-minlength="7" ng-maxlength="10"/><span class="error" ng-show="myForm.myPhoneNumber.$error.minlength">
+        Too short!</span>
+      <span class="error" ng-show="myForm.myPhoneNumber.$error.maxlength">
+        Too long!</span>
+  			</form>
+		</div>		
+	</div>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="scripts/controllers/controller6.js"></script>
+</body>
+</html>
